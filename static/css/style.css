@@ -1,0 +1,61 @@
+.container h1 {
+    color: red;
+}
+
+.card {
+    height: 400px;
+    padding: 1%;
+    overflow: hidden;
+}
+
+.card-image {
+    height: 250px;
+    padding: 1%;
+    overflow: hidden;
+}
+
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    display: -webkit-box;
+    display: moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.flex-item {
+    background: tomato;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    .card {
+        height: 100px;
+    }
+
+    .card-image {
+        min-height: 150px;
+        max-height: 150px;
+    }
+
+    .card-image img{
+        min-height: 150px;
+        max-height: 150px;
+    }
+}
+

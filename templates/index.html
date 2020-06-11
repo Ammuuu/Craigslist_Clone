@@ -1,0 +1,123 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Find Me</title>
+        <meta name="viewport" content="width-device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <style>
+            .card {
+                height: 400px;
+                padding: 1%;
+                overflow: hidden;
+            }
+
+            .card-image {
+                max-height: 250;
+                max-width: 300;
+                min-height: 250;
+            }
+
+            .card-image img {
+                max-height: 250;
+                max-width: 100%;
+                min-height: 250;
+                min-width: 100%;
+            }
+
+            .card-content {
+                min-height: 150;
+                padding: 24px;
+                border-radius: 0 0 2px 2px;
+                max-height: 150;
+            }
+
+            .card-content .text {
+                font-size: 100%;
+                overflow: hidden;
+                color: black;
+            }
+
+            nav {
+                background-color: #333;
+            }
+
+
+
+            @media screen and (max-width: 700px) {
+                .card {
+                    height: 350px;
+                }
+
+                .card-content {
+                    min-height: 300px;
+                }
+
+                .card-image {
+                    min-height: 100px;
+                    max-height: 100px;
+                }
+
+                .card-image img{
+                    min-height: 100px;
+                    max-height: 100px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="container nav-wrapper">
+                <a href="/" class="brand-logo">Find Me</a>
+                <ul id="nav-mobile" class="right">
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1 style="text-align: center;">How can we help you?</h1>
+            <div class="row">
+                <div class="col s4">
+                    <div class="center">
+                        <i class="large material-icons" style="color: #ee6e73">flash_on</i>
+                        <p>Fast Craigslist Web Scraper</p>
+                        <p class="light center">More Interactive and Pretty GUI</p>
+                    </div>
+                </div>
+                <!--3 PROMOS-->
+                <div class="col s4">
+                    <div class="center">
+                        <i class="large material-icons" style="color: orange">camera</i>
+                        <p>Filter Searches</p>
+                        <p class="light center">Search Necessities Easily</p>
+                    </div>
+                </div>
+
+                <div class="col s4">
+                    <div class="center">
+                        <i class="large material-icons" style="color: blue">chrome_reader_mode</i>
+                        <p>More Prettier</p>
+                        <p class="light center">With loads of Love</p>
+                    </div>
+                </div>
+            </div>
+
+            <form action="newSearch" method="post">
+                {% csrf_token %}
+                <input type="text" name="search" placeholder="Search...">
+                <button class="btn waves-effect waves-light" type="submit" name="action">
+                    Submit
+                    <i class="material-icons right">flash_on</i>
+                </button>
+            </form>
+
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+    </body>
+</html>
