@@ -16,6 +16,16 @@
                 overflow: hidden;
             }
 
+            .card:hover {
+                transform: scale(1.1);
+                transition: all 0.6s ease;
+            }
+
+            .card:not(hover) {
+                transform: scale(1);
+                transition: all 0.6s ease;
+            }
+
             .card-image {
                 max-height: 250;
                 max-width: 300;
@@ -40,6 +50,11 @@
                 font-size: 100%;
                 overflow: hidden;
                 color: black;
+            }
+
+            body {
+                background-color: #333;
+                color: white;
             }
 
             nav {
@@ -85,13 +100,13 @@
                     <div class="center">
                         <i class="large material-icons" style="color: #ee6e73">flash_on</i>
                         <p>Fast Craigslist Web Scraper</p>
-                        <p class="light center">More Interactive and Pretty GUI</p>
+                        <p class="light center">Type in and Search to your hearts content</p>
                     </div>
                 </div>
                 <!--3 PROMOS-->
                 <div class="col s4">
                     <div class="center">
-                        <i class="large material-icons" style="color: orange">camera</i>
+                        <i class="large material-icons" style="color: orange">filter_tilt_shift</i>
                         <p>Filter Searches</p>
                         <p class="light center">Search Necessities Easily</p>
                     </div>
@@ -99,16 +114,16 @@
 
                 <div class="col s4">
                     <div class="center">
-                        <i class="large material-icons" style="color: blue">chrome_reader_mode</i>
+                        <i class="large material-icons" style="color: cyan">flare</i>
                         <p>More Prettier</p>
-                        <p class="light center">With loads of Love</p>
+                        <p class="light center">More Interactive and Pretty GUI</p>
                     </div>
                 </div>
             </div>
 
             <form action="newSearch" method="post">
                 {% csrf_token %}
-                <input type="text" name="search" placeholder="Search...">
+                <input style="color: white;" type="text" name="search" placeholder="Search...">
                 <button class="btn waves-effect waves-light" type="submit" name="action">
                     Submit
                     <i class="material-icons right">flash_on</i>
